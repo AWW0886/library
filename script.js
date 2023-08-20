@@ -1,5 +1,6 @@
 const table = document.querySelector('.add-book');
 const newBookButton = document.querySelector('.new-book-button');
+const inputForm = document.querySelector('.input-form');
 const cancelButton = document.querySelector('.cancel-button');
 const addButton = document.querySelector('#add-button');
 const titleInput = document.querySelector('#title-input');
@@ -33,11 +34,11 @@ function Book(title, author, pages, genre, read) {
     this.read = read;
 }
 
-function addBook() {
-    const title = document.getElementById('title').value;
-    const author = document.getElementById('author').value;
-    const genre = document.getElementById('genre').value;
-    const pages = document.getElementById('pages').value;
+function addBookToLibrary() {
+    let title = document.getElementById('title-input').value;
+    let author = document.getElementById('author-input').value;
+    let pages = document.getElementById('pages-input').value;
+    let genre = document.getElementById('genre-select').value;
     let read;
     if (document.getElementById('read-input').checked == true) {
         read = 'Read';
@@ -45,8 +46,9 @@ function addBook() {
         read = 'Not Read';
     }
 
-    const newBook = new Book(title, author, genre, pages, read);
-    myLibrary.push(newBook);
+    let newBook = new Book(title, author, genre, pages, read);
+    console.log(newBook);
+    //myLibrary.push(newBook);
 }
 
 newBookButton.addEventListener('click', function() {
@@ -56,6 +58,10 @@ newBookButton.addEventListener('click', function() {
 
 cancelButton.addEventListener('click', function() {
     let addBookForm = document.querySelector('.input-form');
-    console.log(addBookForm)
     addBookForm.style.display = 'none';
+})
+
+inputForm.addEventListener('submit', function() {
+    event.preventDefault();
+    addBookToLibrary();
 })
