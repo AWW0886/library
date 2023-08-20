@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-container {
+    border: 1px solid seagreen;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: 50px 150px;
+}
+
+.header {
+    border: 1px dashed steelblue;
+    display: flex;
+    justify-content: center;
+}
+
+.input-form {
+    border: 1px dashed steelblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-table tr {
+    border: 1px dashed steelblue;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 0.5fr 0.5fr;
+    justify-items: center;
+}
+
+th {
+    border: 1px dotted purple;
+}
