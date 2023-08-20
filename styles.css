@@ -18,11 +18,22 @@
     justify-content: center;
 }
 
+.new-book-button {
+/*  display: flex;
+    flex-direction: column;
+    align-items: center;*/
+    margin: auto;
+}
+
 .input-form {
     border: 1px dashed steelblue;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.input-form {
+    display: none;
 }
 
 .book-table tr {
