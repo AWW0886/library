@@ -46,3 +46,7 @@
 th {
     border: 1px dotted purple;
 }
+
+.book-card {
+    border: 1px dashed orange;
+}
