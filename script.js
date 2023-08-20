@@ -6,24 +6,36 @@ const addButton = document.querySelector('#add-button');
 const titleInput = document.querySelector('#title-input');
 const authorInput = document.querySelector('#author-input');
 const pagesInput = document.querySelector('#pages-input');
+const genreSelect = document.querySelector('#genre-select');
 
 const myLibrary = [
     {
     title: 'The Hobbit',
     author: 'JRR Tolkien',
-    pages: 304,
+    pages: '304',
     genre: 'Fantasy/Sci-Fi',
     read: 'Read',
     }
 ]
 
-function updateTable() {
-    myLibrary.forEach(book => {
-        let row = document.createElement('tr');
-        Object.keys(book).forEach(elem => {
-            let td = document.createElement('td');
-        })
-    })
+updateLibrary();
+
+function updateLibrary() {
+    let libraryBook = document.querySelector('.library');
+    libraryBook.innerHTML = '';
+    for (let i = 0; i < myLibrary.length; i++) {
+        let book = myLibrary[i];
+        let bookCard = document.createElement('div');
+        bookCard.setAttribute('class', 'book-card');
+        bookCard.innerHTML = `
+        ${book.title}
+        ${book.author}
+        ${book.pages}
+        ${book.genre}
+        ${book.read}
+        `;
+        libraryBook.appendChild(bookCard);
+    }
 }
 
 function Book(title, author, pages, genre, read) {
@@ -46,9 +58,11 @@ function addBookToLibrary() {
         read = 'Not Read';
     }
 
-    let newBook = new Book(title, author, genre, pages, read);
+    let newBook = new Book(title, author, pages, genre, read);
     console.log(newBook);
-    //myLibrary.push(newBook);
+    myLibrary.push(newBook);
+    console.log(myLibrary);
+    updateLibrary();
 }
 
 newBookButton.addEventListener('click', function() {
