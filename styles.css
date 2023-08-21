@@ -32,14 +32,18 @@
     align-items: center;
 }
 
-.input-form {
+/*.input-form {
     display: none;
+}*/
+
+textarea {
+    height: 50px;
 }
 
 .book-table tr {
     border: 1px dashed steelblue;
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr 1fr 0.5fr 0.5fr;
+    grid-template-columns: 2fr 2fr 1fr 1fr 2fr 0.5fr 0.5fr 0.5fr;
     justify-items: center;
 }
 
@@ -47,6 +51,26 @@ th {
     border: 1px dotted purple;
 }
 
+/*.grid-container {
+    display: flex;
+    justify-content: center;
+}*/
+
+.library {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
+    gap: 15px;
+    justify-self: center;
+}
+
 .book-card {
     border: 1px dashed orange;
+    display: grid;
+    justify-items: center;
+    background-color: white;
+    box-shadow: 5px 5px 5px darkgrey;
+    border-left: 10px solid #eab308;
+    border-radius: 5px;
+    height: 225px;
+    padding: 25px 15px;
 }
