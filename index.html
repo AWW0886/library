@@ -28,9 +28,11 @@
                 <option value="Romance">Romance</option>
                 <option value="Other">Other</option>
             </select>
+            <label for="notes-input">Notes</label>
+            <textarea name="" id="notes-input" cols="30" rows="10"></textarea>
                 <label for="read-input">Read?</label>
                 <input type="checkbox" name="" id="read-input">
-            <button class="cancel-button">Cancel</button>
+            <button class="clear-button">Clear</button>
             <button type="submit" id="add-button">Add Book</button>
         </form>
         <table class="book-table">
@@ -40,13 +42,17 @@
                     <th scope="col">Author</th>
                     <th scope="col">Pages</th>
                     <th scope="col">Genre</th>
+                    <th scope="col">Notes</th>
                     <th scope="col">Read</th>
-                    <th scope="col"></th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Remove</th>
                 </tr>
                 <tbody class="add-book"></tbody>
             </thead>
         </table>
+        <div class="grid-container">
         <div class="library"></div>
+        </div>
     </div>
 </body>
 </html>
