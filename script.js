@@ -8,6 +8,8 @@ const authorInput = document.querySelector('#author-input');
 const notesInput = document.querySelector('.notes-input');
 const pagesInput = document.querySelector('#pages-input');
 const genreSelect = document.querySelector('#genre-select');
+//const libraryCard = document.querySelector('.library');
+const editButton = document.querySelector('.edit-button');
 
 const myLibrary = [
     {
@@ -68,9 +70,9 @@ function addBookToLibrary() {
     }
 
     let newBook = new Book(title, author, pages, genre, notes, read);
-    console.log(newBook);
+    //console.log(newBook);
     myLibrary.push(newBook);
-    console.log(myLibrary);
+    //console.log(myLibrary);
     updateLibrary();
     clearForm();
 }
@@ -79,7 +81,9 @@ function clearForm() {
     titleInput.value = '';
     authorInput.value = '';
     pagesInput.value = '';
-    notesInput.value = '';
+    genreSelect.value = 0;
+    let textarea = document.querySelector('#notes-input');
+        textarea.value = '';
 }
 
 function removeBook(index) {
@@ -87,11 +91,9 @@ function removeBook(index) {
     updateLibrary();
 }
 
-function editBook(book) {
-    let addBookForm = document.querySelector('.input-form');
-    addBookForm.style.display = 'flex';
-    titleInput.value = book.title;
-    authorInput.value = book.author;
+function editBook(index) {
+    titleInput.value = index.title;
+    authorInput.value = index.author;
 }
 
 newBookButton.addEventListener('click', function() {
