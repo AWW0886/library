@@ -33,6 +33,8 @@ function updateLibrary() {
         ${book.pages}
         ${book.genre}
         ${book.read}
+        <button class='remove-button' onclick='removeBook(${i})'>Remove
+        </button>
         `;
         libraryBook.appendChild(bookCard);
     }
@@ -62,6 +64,11 @@ function addBookToLibrary() {
     console.log(newBook);
     myLibrary.push(newBook);
     console.log(myLibrary);
+    updateLibrary();
+}
+
+function removeBook(index) {
+    myLibrary.splice(index, 1);
     updateLibrary();
 }
 
