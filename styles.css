@@ -6,23 +6,36 @@
 
 .flex-container {
     border: 1px solid seagreen;
-    display: flex;
-    flex-direction: column;
+    /*display: flex;*/
+    /*flex-direction: column;
     gap: 25px;
-    margin: 50px 150px;
+    margin: 50px 150px;*/
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.form-container {
+    border: 5px dashed purple;
+    /*display: flex;
+    flex-direction: column;
+    height: 100vh;*/
+    display: grid;
+    grid-column: 1 / 2;
+    align-content: start;
+    min-height: 100vh;
 }
 
 .header {
     border: 1px dashed steelblue;
-    display: flex;
-    justify-content: center;
+    /*display: flex;
+    justify-content: center;*/
 }
 
 .new-book-button {
 /*  display: flex;
     flex-direction: column;
-    align-items: center;*/
-    margin: auto;
+    align-items: center;
+    margin: auto;*/
 }
 
 .input-form {
@@ -40,27 +53,35 @@ textarea {
     height: 50px;
 }
 
-.book-table tr {
+/*.book-table tr {
     border: 1px dashed steelblue;
     display: grid;
     grid-template-columns: 2fr 2fr 1fr 1fr 2fr 0.5fr 0.5fr 0.5fr;
     justify-items: center;
-}
-
-th {
-    border: 1px dotted purple;
-}
-
-/*.grid-container {
-    display: flex;
-    justify-content: center;
 }*/
 
+/*th {
+    border: 1px dotted purple;
+}*/
+
+.grid-container {
+    border: 5px solid orange;
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;*/
+    display: grid;
+    grid-column: 2 / 6;
+}
+
 .library {
+    border: 5px solid purple;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
     gap: 15px;
-    justify-self: center;
+    margin: 15px;
+    /*justify-items: start;*/
+    /*width: 100vh;*/
 }
 
 .book-card {
@@ -72,5 +93,14 @@ th {
     border-left: 10px solid #eab308;
     border-radius: 5px;
     height: 225px;
-    padding: 25px 15px;
+    padding: 15 15px 25px;
+}
+
+.book-card img {
+    width: 1.5rem;
+}
+
+.book-card img:hover {
+    cursor: pointer;
+    opacity: 0.5;
 }
