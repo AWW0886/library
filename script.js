@@ -8,10 +8,11 @@ const authorInput = document.querySelector('#author-input');
 const notesInput = document.querySelector('#notes-input');
 const pagesInput = document.querySelector('#pages-input');
 const genreSelect = document.querySelector('#genre-select');
-const libraryCard = document.querySelector('.library');
+const readCheck = document.querySelector('#read-input');
+//const libraryCard = document.querySelector('.book-card');
 const editButton = document.querySelector('.edit-button');
-const readIcon = document.querySelector('#read-icon');
-const testImage = document.querySelector('#test-image');
+const readIcon = document.querySelector('.read-icon');
+//const testImage = document.querySelector('#test-image');
 
 const myLibrary = [
     {
@@ -20,7 +21,7 @@ const myLibrary = [
     pages: '304',
     genre: 'Fantasy/Sci-Fi',
     notes: 'Good Book',
-    read: "READ",
+    read: true,
     }
 ]
 
@@ -35,21 +36,34 @@ function updateLibrary() {
         bookCard.setAttribute('class', 'book-card');
         bookCard.innerHTML = `
         <h3>${book.title}</h3>
-        <p>${book.author}</p>
-        <p>${book.pages}</p>
-        <p>${book.genre}</p>
-        <p>${book.notes}</p>
+        <p>by ${book.author}</p>
+        <div class='book-info'>
+            <p>Pages: ${book.pages}</p>
+            <p>Genre: ${book.genre}</p>
+            <p>Notes: ${book.notes}</p>
+        </div>
         <img src='img/text-box-outline.svg' alt='notes-icon' onclick='removeBook(${i})'>
-        <p class='read-status'>${book.read ? 'READ' : 'NOT READ YET'}</p>
-        <img id='read-icon' onclick='changeRead(${i})' src='img/book-check.svg' alt='read-icon'>
-        <button class='read-button' onclick='changeRead(${i})'>Read/Not Read
+        
+        <p class='read-status'>${book.read ? 
+        bookCard.style.borderColor = 'seagreen': 
+        bookCard.style.borderColor = 'red'}
+        </p>
+
+        <button class='read-button' onclick='changeRead(${i})'>
+        <img class='read-icon' src='img/book-open-page-variant-outline.svg' alt='read-icon'>
         </button>
-        <button class='edit-button' onclick='editBook(${i})'>Edit
+        <button class='edit-button' onclick='editBook(${i})'>
+        <img class='edit-icon' src='img/file-document-edit-outline.svg' alt='edit-icon'>
         </button>
-        <button class='remove-button' onclick='removeBook(${i})'>Remove
+        <button class='remove-button' onclick='removeBook(${i})'>
+        <img class='remove-icon' src='img/trash-can-outline.svg' alt='remove-icon'>
         </button>
         `;
         libraryBook.appendChild(bookCard);
+        let readIcon = document.querySelector('.read-icon');
+        readIcon.addEventListener('click', function() {
+            changeRead();
+        })
     }
 }
 
@@ -91,6 +105,7 @@ function clearForm() {
     notesInput.value = '';
 //    let textarea = document.querySelector('#notes-input');
 //        textarea.value = '';
+    readCheck.checked = false;
 }
 
 function removeBook(index) {
@@ -98,10 +113,10 @@ function removeBook(index) {
     updateLibrary();
 }
 
-function editBook(book) {
-    titleInput.value = book.title;
-    authorInput.value = book.author;
-}
+//function editBook(book) {
+//    titleInput.value = book.title;
+//    authorInput.value = book.author;
+//}
 
 Book.prototype.changeRead = function() {
     this.read = !this.read;
@@ -112,19 +127,28 @@ function changeRead(index) {
     updateLibrary();
 }
 
+//Book.prototype.editBook = function() {
+//    this.title = titleInput.title;
+//}
+
+//function editBook(index) {
+//    myLibrary[index].editBook();
+//}
+
+
 //function changeRead(index) {
 //    let readIcon = document.getElementById('read-icon');
 //    console.log('Hello');
-//    if (readIcon.getAttribute('src') === 'img/book-check.svg') {
-//        readIcon.setAttribute('src', 'img/book.svg');
+//    if (myLibrary[index].getAttribute('src') === 'img/book-check.svg') {
+//        myLibrary[index].setAttribute('src', 'img/book.svg');
 //    } else {
-//        readIcon.setAttribute('src', 'img/book-check.svg');
+//        myLibrary[index].setAttribute('src', 'img/book-check.svg');
 //    }
     //if (readIcon.src === '.img/book-check.svg') {
     //    readIcon.src == 'img/book.svg';
     //} else {
     //    readIcon.src == '.img/book-check.svg';
-    //}
+//    }
 //}
 
 
@@ -153,3 +177,14 @@ addButton.addEventListener('click', function() {
     event.preventDefault();
     addBookToLibrary();
 })
+
+//readIcon.addEventListener('click', function() {
+//    changeRead();
+//})
+
+
+//<p class='read-status'>${book.read ? 
+//        "<img class='read-icon' src='img/book-check.svg' alt='read-icon'>": 
+//        "<img class='read-icon' src='img/book.svg' alt='read-icon'>"}</p>
+
+// <img id='read-icon' onclick='changeRead(${i})' src='img/book-check.svg' alt='read-icon'>
