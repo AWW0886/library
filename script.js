@@ -12,7 +12,8 @@ const readCheck = document.querySelector('#read-input');
 //const libraryCard = document.querySelector('.book-card');
 const editButton = document.querySelector('.edit-button');
 const readIcon = document.querySelector('.read-icon');
-//const testImage = document.querySelector('#test-image');
+const notesIcon = document.querySelector('.notes-icon');
+//const bookInfo = document.querySelector('.book-info');
 
 const myLibrary = [
     {
@@ -23,7 +24,7 @@ const myLibrary = [
     notes: 'Good Book',
     read: true,
     }
-]
+];
 
 updateLibrary();
 
@@ -42,8 +43,23 @@ function updateLibrary() {
             <p>Genre: ${book.genre}</p>
             <p>Notes: ${book.notes}</p>
         </div>
-        <img src='img/text-box-outline.svg' alt='notes-icon' onclick='removeBook(${i})'>
+        <img class='notes-icon' onclick='showHide(${i})' src='img/text-box-outline.svg' alt='notes-icon'>
         
+        <p class='card-background'>${book.genre === 'Fantasy/Sci-Fi' ?
+        bookCard.style.backgroundColor = 'lightblue':
+        book.genre === "Non-Fiction" ?
+        bookCard.style.backgroundColor = 'lightgrey':
+        book.genre === "Romance" ?
+        bookCard.style.backgroundColor = 'pink':
+        book.genre === "Suspense/Thriller" ?
+        bookCard.style.backgroundColor = 'orange':
+        book.genre === "Young Adult" ?
+        bookCard.style.backgroundColor = 'lightyellow':
+        book.genre === "Other" ?
+        bookCard.style.backgroundColor = 'lightgreen':
+        bookCard.style.backgroundColor = 'white'}
+        </p>
+
         <p class='read-status'>${book.read ? 
         bookCard.style.borderColor = 'seagreen': 
         bookCard.style.borderColor = 'red'}
@@ -60,10 +76,10 @@ function updateLibrary() {
         </button>
         `;
         libraryBook.appendChild(bookCard);
-        let readIcon = document.querySelector('.read-icon');
-        readIcon.addEventListener('click', function() {
-            changeRead();
-        })
+//        let readIcon = document.querySelector('.read-icon');
+//        readIcon.addEventListener('click', function() {
+//            changeRead();
+//        })
     }
 }
 
@@ -112,6 +128,27 @@ function removeBook(index) {
     myLibrary.splice(index, 1);
     updateLibrary();
 }
+
+//const bookInfo = document.querySelector('.book-info');
+let display = 0;
+
+//Book.prototype.showHide = function() {
+function showHide() {
+    let bookInfo = document.querySelector('.book-info');
+//    let display = 0;
+    if (display == 1) {
+        bookInfo.style.display = 'block';
+        display = 0;
+    } else {
+        bookInfo.style.display = 'none';
+        display = 1;
+    }
+}
+
+//function showHide(index) {
+//    myLibrary[index].showHide();
+//    updateLibrary();
+//}
 
 //function editBook(book) {
 //    titleInput.value = book.title;
@@ -176,6 +213,14 @@ clearButton.addEventListener('click', function() {
 addButton.addEventListener('click', function() {
     event.preventDefault();
     addBookToLibrary();
+})
+
+readIcon.addEventListener('click', function() {
+    changeRead();
+})
+
+notesIcon.addEventListener('click', function() {
+    showHide();
 })
 
 //readIcon.addEventListener('click', function() {
