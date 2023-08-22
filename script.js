@@ -4,7 +4,8 @@ const inputForm = document.querySelector('.input-form');
 const clearButton = document.querySelector('.clear-button');
 const addButton = document.querySelector('#add-button');
 const titleInput = document.querySelector('#title-input');
-const authorInput = document.querySelector('#author-input');
+const authorFirstInput = document.querySelector('#authorfirst-input');
+const authorLastInput = document.querySelector('#authorlast-input');
 const notesInput = document.querySelector('#notes-input');
 const pagesInput = document.querySelector('#pages-input');
 const genreSelect = document.querySelector('#genre-select');
@@ -18,7 +19,8 @@ const notesIcon = document.querySelector('.notes-icon');
 const myLibrary = [
     {
     title: 'The Hobbit',
-    author: 'JRR Tolkien',
+    authorfirst: 'JRR',
+    authorlast: 'Tolkien',
     pages: '304',
     genre: 'Fantasy/Sci-Fi',
     notes: 'Good Book',
@@ -37,7 +39,7 @@ function updateLibrary() {
         bookCard.setAttribute('class', 'book-card');
         bookCard.innerHTML = `
         <h3>${book.title}</h3>
-        <p>by ${book.author}</p>
+        <p>by ${book.authorfirst} ${book.authorlast}</p>
         <div class='book-info'>
             <p>Pages: ${book.pages}</p>
             <p>Genre: ${book.genre}</p>
@@ -80,12 +82,19 @@ function updateLibrary() {
 //        readIcon.addEventListener('click', function() {
 //            changeRead();
 //        })
+        let notesIcon = document.querySelector('.notes-icon');
+        notesIcon.addEventListener('click', function() {
+        console.log('Seems to work...');
+        showHide();
+
+        })
     }
 }
 
-function Book(title, author, pages, genre, notes, read) {
+function Book(title, authorfirst, authorlast, pages, genre, notes, read) {
     this.title = title;
-    this.author = author;
+    this.authorfirst = authorfirst;
+    this.authorlast = authorlast;
     this.pages = pages;
     this.genre = genre;
     this.notes = notes;
@@ -94,7 +103,8 @@ function Book(title, author, pages, genre, notes, read) {
 
 function addBookToLibrary() {
     let title = document.getElementById('title-input').value;
-    let author = document.getElementById('author-input').value;
+    let authorfirst = document.getElementById('authorfirst-input').value;
+    let authorlast = document.getElementById('authorlast-input').value;
     let pages = document.getElementById('pages-input').value;
     let genre = document.getElementById('genre-select').value;
     let notes = document.getElementById('notes-input').value;
@@ -105,7 +115,7 @@ function addBookToLibrary() {
     //    read = 'Not Read';
     //}
 
-    let newBook = new Book(title, author, pages, genre, notes, read);
+    let newBook = new Book(title, authorfirst, authorlast, pages, genre, notes, read);
     //console.log(newBook);
     myLibrary.push(newBook);
     //console.log(myLibrary);
@@ -115,7 +125,8 @@ function addBookToLibrary() {
 
 function clearForm() {
     titleInput.value = '';
-    authorInput.value = '';
+    authorFirstInput.value = '';
+    authorLastInput.value = '';
     pagesInput.value = '';
     genreSelect.value = 0;
     notesInput.value = '';
@@ -130,18 +141,17 @@ function removeBook(index) {
 }
 
 //const bookInfo = document.querySelector('.book-info');
-let display = 0;
+//let display = 0;
 
 //Book.prototype.showHide = function() {
 function showHide() {
+    console.log('Why...');
     let bookInfo = document.querySelector('.book-info');
 //    let display = 0;
-    if (display == 1) {
-        bookInfo.style.display = 'block';
-        display = 0;
-    } else {
+    if (bookInfo.style.display === 'block') {
         bookInfo.style.display = 'none';
-        display = 1;
+    } else {
+        bookInfo.style.display = 'block';
     }
 }
 
@@ -215,17 +225,17 @@ addButton.addEventListener('click', function() {
     addBookToLibrary();
 })
 
-readIcon.addEventListener('click', function() {
-    changeRead();
-})
-
-notesIcon.addEventListener('click', function() {
-    showHide();
-})
-
 //readIcon.addEventListener('click', function() {
 //    changeRead();
 //})
+
+//notesIcon.addEventListener('click', function() {
+//    showHide();
+//})
+
+readIcon.addEventListener('click', function() {
+    changeRead();
+})
 
 
 //<p class='read-status'>${book.read ? 
