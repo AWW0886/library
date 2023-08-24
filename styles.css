@@ -2,8 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'playfair_displayregular';
+    /*font-family: 'playfair_displayregular';*/
     /*font-family: 'dm_serif_displayregular';*/
+    /*font-family: 'lobsterregular';*/
+    /*font-family: 'museomodernothin';*/
+    /*font-family: 'permanent_markerregular';*/
+    /*font-family: 'bricolage_grotesque48ptCnXBd';*/
+    /*font-family: 'robotobold';*/
+    /*font-family: 'roboto_slabregular';*/
+    font-family: 'robotoregular';
     /*font-weight: bold;*/
 }
 
@@ -21,7 +28,72 @@
          url('webfonts/dmserifdisplay-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+    font-family: 'lobsterregular';
+    src: url('webfonts/lobster-regular-webfont.woff2') format('woff2'),
+         url('webfonts/lobster-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'museomodernothin_italic';
+    src: url('webfonts/museomoderno-italic-variablefont_wght-webfont.woff2') format('woff2'),
+         url('webfonts/museomoderno-italic-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'museomodernothin';
+    src: url('webfonts/museomoderno-variablefont_wght-webfont.woff2') format('woff2'),
+         url('webfonts/museomoderno-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'permanent_markerregular';
+    src: url('webfonts/permanentmarker-regular-webfont.woff2') format('woff2'),
+         url('webfonts/permanentmarker-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto_slabregular';
+    src: url('webfonts/robotoslab-variablefont_wght-webfont.woff2') format('woff2'),
+         url('webfonts/robotoslab-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotobold';
+    src: url('webfonts/roboto-bold-webfont.woff2') format('woff2'),
+         url('webfonts/roboto-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bricolage_grotesque48ptCnXBd';
+    src: url('webfonts/bricolagegrotesque-variablefont_opszwdthwght-webfont.woff2') format('woff2'),
+         url('webfonts/bricolagegrotesque-variablefont_opszwdthwght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('webfonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('webfonts/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .page-container {
@@ -48,7 +120,7 @@
     grid-column: 1 / 2;
     align-content: start;
     min-height: 100vh;
-    /*color: white;*/
+    /*color: whitesmoke;*/
 }
 
 .header {
@@ -63,6 +135,13 @@
     flex-direction: column;
     align-items: center;
     margin: auto;*/
+}
+
+@media only screen and (min-width: 601px) {
+
+.menu-icon {
+    display: none;
+}
 }
 
 .header,
@@ -90,7 +169,8 @@ label {
 
 input,
 select {
-    font-size: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     width: clamp(15ch, 100%, 30ch);
 }
 
@@ -125,6 +205,7 @@ textarea {
     margin: auto;*/
     display: grid;
     grid-column: 2 / 6;
+    background-color: white;
 }
 
 .library {
@@ -290,4 +371,8 @@ textarea {
     input {
         /*font-size: 1rem;*/
     };
+
+    .menu-icon {
+        display: block;
+    }
 }
