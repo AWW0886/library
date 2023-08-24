@@ -14,7 +14,9 @@ const readCheck = document.querySelector('#read-input');
 const editButton = document.querySelector('.edit-button');
 const readIcon = document.querySelector('.read-icon');
 const notesIcon = document.querySelector('.notes-icon');
-//const bookInfo = document.querySelector('.book-info');
+const bookInfo = document.querySelector('.book-info');
+const pagesInfo = document.querySelector('.pages-info');
+
 
 const myLibrary = [
     {
@@ -24,7 +26,7 @@ const myLibrary = [
     pages: '304',
     genre: 'Fantasy/Sci-Fi',
     notes: 'Good Book',
-    read: true,
+    read: true
     }
 ];
 
@@ -38,14 +40,13 @@ function updateLibrary() {
         let bookCard = document.createElement('div');
         bookCard.setAttribute('class', 'book-card');
         bookCard.innerHTML = `
-        <h3>${book.title}</h3>
+        <h3 class='card-title'>${book.title}</h3>
         <p>by ${book.authorfirst} ${book.authorlast}</p>
         <div class='book-info'>
             <p>Pages: ${book.pages}</p>
             <p>Genre: ${book.genre}</p>
-            <p>Notes: ${book.notes}</p>
+            <p class='notes'>Notes: ${book.notes}</p>
         </div>
-        <img class='notes-icon' onclick='showHide(${i})' src='img/text-box-outline.svg' alt='notes-icon'>
         
         <p class='card-background'>${book.genre === 'Fantasy/Sci-Fi' ?
         bookCard.style.backgroundColor = 'lightblue':
@@ -66,28 +67,26 @@ function updateLibrary() {
         bookCard.style.borderColor = 'seagreen': 
         bookCard.style.borderColor = 'red'}
         </p>
-
-        <button class='read-button' onclick='changeRead(${i})'>
-        <img class='read-icon' src='img/book-open-page-variant-outline.svg' alt='read-icon'>
-        </button>
-        <button class='edit-button' onclick='editBook(${i})'>
-        <img class='edit-icon' src='img/file-document-edit-outline.svg' alt='edit-icon'>
-        </button>
-        <button class='remove-button' onclick='removeBook(${i})'>
-        <img class='remove-icon' src='img/trash-can-outline.svg' alt='remove-icon'>
-        </button>
+        <div class='card-icon-container'>
+        <img class='notes-icon' onclick='showHide(${i})' src='img/text-box-outline.svg' alt='notes-icon'>
+        <img class='read-icon' onclick='changeRead(${i})' src='img/book-open-page-variant-outline.svg' alt='read-icon'>
+        <img class='edit-icon' onclick='editBook(${i})'src='img/file-document-edit-outline.svg' alt='edit-icon'>
+        <img class='remove-icon' onclick='removeBook(${i})' src='img/trash-can-outline.svg' alt='remove-icon'>
+        </div>
         `;
         libraryBook.appendChild(bookCard);
 //        let readIcon = document.querySelector('.read-icon');
 //        readIcon.addEventListener('click', function() {
 //            changeRead();
 //        })
-        let notesIcon = document.querySelector('.notes-icon');
-        notesIcon.addEventListener('click', function() {
-        console.log('Seems to work...');
-        showHide();
-
-        })
+//        let notesIcon = document.querySelector('.notes-icon');
+//        notesIcon.addEventListener('click', function() {
+//        console.log('Seems to work...');
+//        showHide();
+//        })
+//        readIcon.addEventListener('click', function() {
+//        changeRead();
+//        })
     }
 }
 
@@ -160,10 +159,10 @@ function showHide() {
 //    updateLibrary();
 //}
 
-//function editBook(book) {
-//    titleInput.value = book.title;
+function editBook(book) {
+    titleInput.value = book.title;
 //    authorInput.value = book.author;
-//}
+}
 
 Book.prototype.changeRead = function() {
     this.read = !this.read;
@@ -230,6 +229,7 @@ addButton.addEventListener('click', function() {
 //})
 
 //notesIcon.addEventListener('click', function() {
+//    console.log('Seems to work...')
 //    showHide();
 //})
 
