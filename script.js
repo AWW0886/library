@@ -16,6 +16,7 @@ const readIcon = document.querySelector('.read-icon');
 const notesIcon = document.querySelector('.notes-icon');
 const bookInfo = document.querySelector('.book-info');
 const pagesInfo = document.querySelector('.pages-info');
+//const cardTitle = document.querySelector('.card-title');
 
 
 const myLibrary = [
@@ -41,7 +42,8 @@ function updateLibrary() {
         bookCard.setAttribute('class', 'book-card');
         bookCard.innerHTML = `
         <h3 class='card-title'>${book.title}</h3>
-        <p>by ${book.authorfirst} ${book.authorlast}</p>
+        <p class='card-author'>by ${book.authorfirst} ${book.authorlast}</p>
+        <div class='card-bottom-row'>
         <div class='book-info'>
             <p>Pages: ${book.pages}</p>
             <p>Genre: ${book.genre}</p>
@@ -49,29 +51,30 @@ function updateLibrary() {
         </div>
         
         <p class='card-background'>${book.genre === 'Fantasy/Sci-Fi' ?
-        bookCard.style.backgroundColor = 'lightblue':
+        bookCard.style.backgroundColor = 'steelblue':
         book.genre === "Non-Fiction" ?
-        bookCard.style.backgroundColor = 'lightgrey':
+        bookCard.style.backgroundColor = 'purple':
         book.genre === "Romance" ?
-        bookCard.style.backgroundColor = 'pink':
+        bookCard.style.backgroundColor = 'goldenrod':
         book.genre === "Suspense/Thriller" ?
-        bookCard.style.backgroundColor = 'orange':
-        book.genre === "Young Adult" ?
-        bookCard.style.backgroundColor = 'lightyellow':
+        bookCard.style.backgroundColor = 'lightblue':
+        book.genre === "Young Adult" ? 
+        bookCard.style.backgroundColor= 'gray':
         book.genre === "Other" ?
-        bookCard.style.backgroundColor = 'lightgreen':
-        bookCard.style.backgroundColor = 'white'}
+        bookCard.style.backgroundColor = 'pink':
+        bookCard.style.backgroundColor = 'seagreen'}
         </p>
 
         <p class='read-status'>${book.read ? 
-        bookCard.style.borderColor = 'seagreen': 
+        bookCard.style.borderColor = 'green': 
         bookCard.style.borderColor = 'red'}
         </p>
         <div class='card-icon-container'>
-        <img class='notes-icon' onclick='showHide(${i})' src='img/text-box-outline.svg' alt='notes-icon'>
-        <img class='read-icon' onclick='changeRead(${i})' src='img/book-open-page-variant-outline.svg' alt='read-icon'>
-        <img class='edit-icon' onclick='editBook(${i})'src='img/file-document-edit-outline.svg' alt='edit-icon'>
-        <img class='remove-icon' onclick='removeBook(${i})' src='img/trash-can-outline.svg' alt='remove-icon'>
+            <img class='notes-icon' onclick='showHide(${i})' src='img/text-box-outline.svg' alt='notes-icon'>
+            <img class='read-icon' onclick='changeRead(${i})' src='img/book-open-page-variant-outline.svg' alt='read-icon'>
+            <img class='edit-icon' onclick='editBook(${i})'src='img/file-document-edit-outline.svg' alt='edit-icon'>
+            <img class='remove-icon' onclick='removeBook(${i})' src='img/trash-can-outline.svg' alt='remove-icon'>
+        </div>
         </div>
         `;
         libraryBook.appendChild(bookCard);
