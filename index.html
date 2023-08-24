@@ -8,31 +8,34 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="flex-container">
+    <div class="page-container">
         <div class="form-container">
             <h1 class="header">My Library</h1>
         <!--    <button class="new-book-button">New Book</button> -->
             <form class="input-form">
-                <label for="title-input">Title</label>
-                <input type="text" id="title-input">
-                <label for="authorfirst-input">Author</label>
-                <input type="text" id="authorfirst-input">
-                <label for="authorlast-input"></label>
-                <input type="text" id="authorlast-input">
-                <label for="pages-input">Pages</label>
-                <input type="number" id="pages-input">
-                <label for="genre-select">Genre</label>
-                <select name="" id="genre-select">
-                    <option value=""></option>
-                    <option value="Fantasy/Sci-Fi">Fantasy/Sci-Fi</option>
-                    <option value="Non-Fiction">Non-Fiction</option>
-                    <option value="Romance">Romance</option>
-                    <option value="Suspense/Thriller">Suspense/Thriller</option>
-                    <option value="Young Adult">Young Adult</option>
-                    <option value="Other">Other</option>
-                </select>
+                <div class="align-form">
+                    <label for="title-input">Title</label>
+                    <input type="text" id="title-input">
+                
+                    <label for="authorfirst-input">Author</label>
+                    <input type="text" id="authorfirst-input" placeholder="First Name">
+                    <label for="authorlast-input"></label>
+                    <input type="text" id="authorlast-input" placeholder="Last Name">
+                    <label for="pages-input">Pages</label>
+                    <input type="number" id="pages-input">
+                    <label for="genre-select">Genre</label>
+                    <select name="" id="genre-select">
+                        <option value=""></option>
+                        <option value="Fantasy/Sci-Fi">Fantasy/Sci-Fi</option>
+                        <option value="Non-Fiction">Non-Fiction</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Suspense/Thriller">Suspense/Thriller</option>
+                        <option value="Young Adult">Young Adult</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
                 <label for="notes-input">Notes</label>
-                <textarea name="" id="notes-input"></textarea>
+                <textarea name="" id="notes-input" disabled></textarea>
                 <label for="read-input">Read?</label>
                 <input type="checkbox" name="" id="read-input">
                 <button class="clear-button" disabled>Clear</button>
