@@ -25,7 +25,7 @@
 }
 
 .page-container {
-    border: 1px solid seagreen;
+    /*border: 1px solid seagreen;*/
     /*display: flex;*/
     /*flex-direction: column;
     gap: 25px;
@@ -35,7 +35,12 @@
 }
 
 .form-container {
-    border: 5px dashed purple;
+    /*border: 5px dashed purple;*/
+    background-color: gainsboro;
+    /*background: url(img/ed-robertson-FDzRG30DeVM-unsplash.jpg);*/
+    /*background: url(img/tim-van-cleef-1JBOZwuW7sI-unsplash.jpg);*/
+    /*background-size: 100%;
+    filter: grayscale(100%);*/
     /*display: flex;
     flex-direction: column;
     height: 100vh;*/
@@ -43,12 +48,14 @@
     grid-column: 1 / 2;
     align-content: start;
     min-height: 100vh;
+    /*color: white;*/
 }
 
 .header {
-    border: 1px dashed steelblue;
+    /*border: 1px dashed steelblue;*/
     display: flex;
     justify-content: center;
+    font-size: 2.5rem;
 }
 
 .new-book-button {
@@ -66,22 +73,29 @@ label {
 }
 
 .input-form {
-    border: 1px dashed steelblue;
+    /*border: 1px dashed steelblue;*/
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1rem;
-    margin: 15px;
+    margin: 30px;
 }
 
 .align-form {
     display: flex;
     flex-direction: column;
+    /*background-color: white;*/
+    /*box-shadow: 5px 5px 5px darkgrey;*/
 }
 
 input,
 select {
     font-size: 1.25rem;
+    width: clamp(15ch, 100%, 30ch);
+}
+
+label {
+    font-size: 1rem;
 }
 
 #authorfirst-input {
@@ -104,7 +118,7 @@ textarea {
 }*/
 
 .grid-container {
-    border: 5px solid orange;
+    /*border: 5px solid orange;*/
     /*display: flex;
     flex-direction: column;
     justify-content: center;
@@ -114,30 +128,37 @@ textarea {
 }
 
 .library {
-    border: 5px solid purple;
+    /*border: 5px solid purple;*/
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
+    grid-template-columns: repeat(auto-fit, minmax(275px, 0.33fr));
     gap: 15px;
-    margin: 15px;
+    margin: 30px 15px;
     /*justify-items: start;*/
     /*width: 100vh;*/
 }
 
 .book-card {
-    border: 1px dashed orange;
+    /*border: 1px dashed orange;*/
     display: grid;
-    justify-items: center;
-    background-color: white;
+    /*justify-items: center;*/
+    /*background-color: white;*/
     box-shadow: 5px 5px 5px darkgrey;
     border-left: 10px solid #eab308;
     border-radius: 5px;
     height: 225px;
-    padding: 15 15px 25px;
+    padding: 25px 15px 25px;
+    color: whitesmoke;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .book-card img, img {
     width: 1.5rem;
 }
+
+/*.card-background {
+    background-size: 100% 100%;
+}*/
 
 /*.book-card img:hover {
     cursor: pointer;
@@ -154,14 +175,37 @@ textarea {
     background-color: white;
 }*/
 
+.card-title {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    white-space: wrap;
+    height: 80px; 
+    min-width: 225px; 
+    overflow: auto;
+    text-overflow: clip ellipsis;
+    /*border: 1px dashed black;*/
+    
+}
+
+/*.card-title:hover {
+    overflow: visible;
+}*/
+
 .book-info {
-    border: 1px dashed purple;
+    /*border: 1px dashed purple;*/
     display: block;
+    font-size: 0.75rem;
 }
 
 .read-status {
     border: 1px dashed purple;
     display: none;
+}
+
+.notes-label,
+.read-label {
+    display: flex;
+    justify-content: center;
 }
 
 .read-button,
@@ -187,9 +231,44 @@ textarea {
     display: none;
 }
 
+.card-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 .card-icon-container {
+    /*border: 1px dashed black;*/
     display: flex;
     justify-content: flex-end;
+    ;
+}
+
+.card-icon-container img {
+    filter: invert(100%);
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .library {
+        grid-template-columns: repeat(auto-fit, minmax(275px, 0.5fr));
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .library {
+        grid-template-columns: 1fr;
+        margin: 15px 45px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    .library {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -205,6 +284,7 @@ textarea {
 
     .library {
         grid-template-columns: 1fr;
+        margin: 15px 45px;
     }
 
     input {
