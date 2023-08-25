@@ -17,6 +17,8 @@
         </div>
             <form class="input-form">
                 <div class="align-form">
+                    <div class="sub-align">
+                    <div class="align-one">
                     <label for="title-input">Title</label>
                     <input type="text" id="title-input">
                 
@@ -28,8 +30,12 @@
                     <input type="text" 
                            id="authorlast-input" 
                            placeholder="Last Name">
+                    </div>
+                    <div class="align-two">
                     <label for="pages-input">Pages</label>
                     <input type="number" id="pages-input">
+                    
+                    <div class="genre-container">
                     <label for="genre-select">Genre</label>
                     <select name="" id="genre-select">
                         <option value=""></option>
@@ -40,12 +46,16 @@
                         <option value="Young Adult">Young Adult</option>
                         <option value="Other">Other</option>
                     </select>
-                
-                <label class="notes-label" for="notes-input">Notes</label>
-                <textarea name="" id="notes-input" disabled></textarea>
-                <label class="read-label" for="read-input">Read?</label>
-                <input type="checkbox" name="" id="read-input">
-            </div>
+                    </div>
+                    
+                    </div>
+                    </div>
+                    <label class="notes-label" for="notes-input">Notes</label>
+                    <textarea name="" id="notes-input" disabled></textarea>
+                    <label class="read-label" for="read-input">Read?</label>
+                    <input type="checkbox" name="" id="read-input">
+                    
+                </div>
             <div class="button-container">
                 <button class="clear-button" disabled>Clear</button>
                 <button type="submit" id="add-button">Add Book</button>
