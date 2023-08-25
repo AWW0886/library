@@ -64,7 +64,7 @@ function updateLibrary() {
         bookCard.style.backgroundColor= 'lightyellow':
         book.genre === "Other" ?
         bookCard.style.backgroundColor = 'mediumaquamarine':
-        bookCard.style.backgroundColor = 'lightgrey'}
+        bookCard.style.backgroundColor = '#e3e3e3'}
         </p>
 
         <p class='read-status'>${book.read ? 
