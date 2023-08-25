@@ -17,6 +17,8 @@ const notesIcon = document.querySelector('.notes-icon');
 const bookInfo = document.querySelector('.book-info');
 const pagesInfo = document.querySelector('.pages-info');
 //const cardTitle = document.querySelector('.card-title');
+const menuIcon = document.querySelector('.menu-icon');
+//const inputForm = document.querySelector('.input-form');
 
 
 const myLibrary = [
@@ -51,23 +53,25 @@ function updateLibrary() {
         </div>
         
         <p class='card-background'>${book.genre === 'Fantasy/Sci-Fi' ?
-        bookCard.style.backgroundColor = 'steelblue':
+        bookCard.style.backgroundColor = 'powderblue':
         book.genre === "Non-Fiction" ?
-        bookCard.style.backgroundColor = 'purple':
+        bookCard.style.backgroundColor = 'rosybrown':
         book.genre === "Romance" ?
-        bookCard.style.backgroundColor = 'goldenrod':
+        bookCard.style.backgroundColor = 'lightpink':
         book.genre === "Suspense/Thriller" ?
-        bookCard.style.backgroundColor = 'lightblue':
+        bookCard.style.backgroundColor = 'thistle':
         book.genre === "Young Adult" ? 
-        bookCard.style.backgroundColor= 'gray':
+        bookCard.style.backgroundColor= 'lightyellow':
         book.genre === "Other" ?
-        bookCard.style.backgroundColor = 'pink':
-        bookCard.style.backgroundColor = 'seagreen'}
+        bookCard.style.backgroundColor = 'mediumaquamarine':
+        bookCard.style.backgroundColor = 'lightgrey'}
         </p>
 
         <p class='read-status'>${book.read ? 
-        bookCard.style.borderColor = 'green': 
-        bookCard.style.borderColor = 'red'}
+        bookCard.style.borderLeftColor= '#f95959': 
+        bookCard.style.borderTopColor = '#352f44',
+        bookCard.style.borderRightColor = '#352f44',
+        bookCard.style.borderBottomColor = '#352f44'}
         </p>
         <div class='card-icon-container'>
             <img class='notes-icon' onclick='showHide(${i})' src='img/text-box-outline.svg' alt='notes-icon'>
@@ -209,6 +213,20 @@ function changeRead(index) {
 //    let addBookForm = document.querySelector('.input-form');
 //    addBookForm.style.display = 'flex';
 //    changeRead();
+//})
+
+//function showHideForm() {
+//    let inputForm = document.querySelector('.input-form');
+//    let display = 0;
+//        if (inputForm.style.display === 'flex') {
+//            inputForm.style.display = 'none';
+//        } else {
+//            inputForm.style.display = 'flex';
+//        }
+//}
+
+//menuIcon.addEventListener('click', function() {
+//    showHideForm();
 //})
 
 clearButton.addEventListener('click', function() {
