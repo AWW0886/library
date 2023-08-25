@@ -452,7 +452,7 @@ textarea {
     .library {
         grid-template-columns: 1fr;
         /*margin: 5px 30px;*/
-        margin: -15px 7.5px -15px -7.5px;
+        margin: -15px 15px -15px 0;
     }
 
     .input-form {
