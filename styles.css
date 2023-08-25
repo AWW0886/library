@@ -277,14 +277,14 @@ textarea {
     margin: auto;*/
     display: grid;
     grid-column: 2 / 6;
-    margin: 30px 15px;
+    margin: 30px 15px 30px 30px;
     /*background: linear-gradient(to right, #7bc67b, #ffffb5);*/
 }
 
 .library {
     /*border: 5px solid purple;*/
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(275px, 0.34fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 0.34fr));
     gap: 15px;
     /*margin: 30px 15px;*/
     /*justify-items: start;*/
@@ -408,10 +408,11 @@ textarea {
     margin-left: 5px;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1100px) {
 
     .library {
         grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
+        margin-right: 15px;
     }
 }
 
@@ -419,7 +420,6 @@ textarea {
 
     .library {
         grid-template-columns: 1fr;
-        margin: 7.5px 15px;
     }
 }
 
@@ -439,13 +439,14 @@ textarea {
 
     .form-container {
         min-height: 0;
-        margin-bottom: 0px;
+        margin-bottom: 0;
         margin-right: 15px;
     }
 
     .library {
         grid-template-columns: 1fr;
-        margin: 5px 30px;
+        /*margin: 5px 30px;*/
+        margin: -15px 0 -15px -15px;
     }
 
     .input-form {
