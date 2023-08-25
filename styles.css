@@ -106,6 +106,7 @@
     grid-template-columns: repeat(5, 1fr);
     /*display: flex;*/
     background-color: #455d7a;
+    min-height: 100vh;
     
 }
 
@@ -119,25 +120,27 @@
     /*display: flex;
     flex-direction: column;
     height: 100vh;*/
-    display: grid;
-    grid-column: 1 / 2;
+    /*display: grid;*/
+    /*grid-column: 1 / 2;*/
     align-content: start;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
     /*color: whitesmoke;*/
-    margin: 7.5px;
+    margin: 7.5px 0 7.5px 15px;
     border-radius: 10px;
     /*box-shadow: 5px 5px 5px darkgrey;*/
     border: 2.5px solid whitesmoke;
+    outline: 2.5px solid #233142;
 }
 
 .header {
     /*border: 1px dashed steelblue;*/
     display: flex;
     justify-content: center;
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     background-color: #233142;
     color: whitesmoke;
     border-radius: 10px 10px 0 0;
+    padding: 0 15px 10px;
 }
 
 .new-book-button {
@@ -148,8 +151,8 @@
 }
 
 .menu-icon-container {
-    border: 1px solid black;
-    padding: 7.5px 0 7.5px 7.5px;
+    /*border: 1px solid black;*/
+    padding: 7.5px 0 2.5px 7.5px;
 }
 
 @media only screen and (min-width: 601px) {
@@ -157,6 +160,16 @@
 .menu-icon {
     display: none;
 }
+
+/*.input-form {
+    border: 1px dashed steelblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    margin: 30px;
+    gap: 10px;
+}*/
 }
 
 .header,
@@ -172,7 +185,8 @@ label {
     flex-direction: column;
     align-items: center;
     font-size: 1rem;
-    margin: 30px;
+    padding: 10px 30px 15px;
+    gap: 10px;
 }
 
 .align-form {
@@ -187,6 +201,7 @@ select {
     font-size: 1rem;
     line-height: 1.5rem;
     width: clamp(15ch, 100%, 30ch);
+    margin-bottom: 5px;
 }
 
 label {
@@ -199,6 +214,7 @@ label {
 
 textarea {
     height: 50px;
+    margin-bottom: 5px;
 }
 
 /*.book-table tr {
@@ -225,23 +241,23 @@ textarea {
     color: whitesmoke;
     cursor: pointer;
     border: none;
-    /*border: 2.5px solid whitesmoke;*/
+    /*border: 1.5px solid whitesmoke;*/
     border-radius: 5px;
     box-shadow: 2.5px 2.5px 5px grey;
     /*font-size: 1rem;
     /*font-weight: bold;*/
-    margin: 5px 5px 5px;
-    padding: 0 25px;
+    margin: 0px 5px 5px;
+    padding: 5px 5px;
     
     width: 5rem;
     text-align: center;
 }
 
-.right-container {
+/*.right-container {
     display: flex;
     flex-direction: column;
     width: 100vw;
-}
+}*/
 
 .subheader-one {
     border: 2px solid black;
@@ -261,15 +277,16 @@ textarea {
     margin: auto;*/
     display: grid;
     grid-column: 2 / 6;
+    margin: 30px 15px;
     /*background: linear-gradient(to right, #7bc67b, #ffffb5);*/
 }
 
 .library {
     /*border: 5px solid purple;*/
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(275px, 0.33fr));
+    grid-template-columns: repeat(auto-fit, minmax(275px, 0.34fr));
     gap: 15px;
-    margin: 30px 15px;
+    /*margin: 30px 15px;*/
     /*justify-items: start;*/
     /*width: 100vh;*/
 }
@@ -280,9 +297,9 @@ textarea {
     /*justify-items: center;*/
     /*background-color: white;*/
     /*box-shadow: 5px 5px 5px grey;*/
-    border-top: 2.5px solid #352f44;
-    border-bottom: 2.5px solid #352f44;
-    border-right: 2.5px solid #352f44;
+    border-top: 0.5px solid #352f44;
+    border-bottom: 0.5px solid #352f44;
+    border-right: 0.5px solid #352f44;
     border-left: 10px solid #352f44;
    /* border: 2px solid whitesmoke;*/
     border-radius: 5px;
@@ -291,6 +308,7 @@ textarea {
     color: black;
     background-repeat: no-repeat;
     background-size: cover;
+    outline: 2px solid #352f44;
 }
 
 .book-card img, img {
@@ -317,7 +335,7 @@ textarea {
 }*/
 
 .card-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     line-height: 2.5rem;
     white-space: wrap;
     height: 80px; 
@@ -393,7 +411,7 @@ textarea {
 @media only screen and (max-width: 1000px) {
 
     .library {
-        grid-template-columns: repeat(auto-fit, minmax(275px, 0.5fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
     }
 }
 
@@ -401,14 +419,14 @@ textarea {
 
     .library {
         grid-template-columns: 1fr;
-        margin: 15px 45px;
+        margin: 7.5px 15px;
     }
 }
 
 @media only screen and (max-width: 700px) {
 
     .library {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));;
     }
 }
 
@@ -421,18 +439,31 @@ textarea {
 
     .form-container {
         min-height: 0;
+        margin-bottom: 0px;
+        margin-right: 15px;
     }
 
     .library {
         grid-template-columns: 1fr;
-        margin: 15px 45px;
+        margin: 5px 30px;
     }
 
-    input {
-        /*font-size: 1rem;*/
+    .input-form {
+        padding-top: 0;
     };
 
     .menu-icon {
         display: block;
     }
-}
+
+    /*.input-form {
+        display: none;
+            /*border: 1px dashed steelblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1rem;
+            margin: 30px;
+            gap: 10px;
+        }*/
+    }
