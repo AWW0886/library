@@ -194,6 +194,20 @@ label {
     flex-direction: column;
     /*background-color: white;*/
     /*box-shadow: 5px 5px 5px darkgrey;*/
+    /*border: 1px solid black;*/
+}
+
+.align-one {
+    display: flex;
+    flex-direction: column;
+    /*border: 1px dashed seagreen;*/
+    
+}
+
+.align-two {
+    display: flex;
+    flex-direction: column;
+    /*border: 1px dashed steelblue;*/
 }
 
 input,
@@ -219,7 +233,7 @@ textarea {
 
 .read-input {
     display: flex;
-    justify-content: center;
+    align-items: center;
 
 }
 
@@ -426,6 +440,39 @@ textarea {
 
     .library {
         grid-template-columns: 1fr;
+        margin: -15px 15px -15px 0;
+    }
+
+    .page-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .align-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sub-align {
+        display: flex;
+        gap: 15px;
+    }
+
+    .genre-container {
+        margin-top: 15px;
+    }
+
+    textarea {
+        height: 50px;
+        width: 250px;
+        
+    }
+
+    .form-container {
+        min-height: 0;
+        margin-bottom: 0;
+        margin-right: 15px;
     }
 }
 
@@ -434,13 +481,53 @@ textarea {
     .library {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));;
     }
-}
-
-@media only screen and (max-width: 600px) {
 
     .page-container {
         display: flex;
         flex-direction: column;
+    }
+
+    .align-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sub-align {
+        display: flex;
+        gap: 15px;
+    }
+
+    .genre-container {
+        margin-top: 15px;
+    }
+
+    textarea {
+        height: 50px;
+        width: 250px;
+        
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    /*.page-container {
+        display: flex;
+        flex-direction: column;
+    }*/
+
+    .sub-align {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .genre-container {
+        margin-top: 0;
     }
 
     .form-container {
@@ -461,6 +548,11 @@ textarea {
 
     .menu-icon {
         display: block;
+    }
+
+    textarea {
+        height: 50px;
+        width: 200px;
     }
 
     /*.input-form {
