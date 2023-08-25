@@ -217,6 +217,12 @@ textarea {
     margin-bottom: 5px;
 }
 
+.read-input {
+    display: flex;
+    justify-content: center;
+
+}
+
 /*.book-table tr {
     border: 1px dashed steelblue;
     display: grid;
@@ -446,7 +452,7 @@ textarea {
     .library {
         grid-template-columns: 1fr;
         /*margin: 5px 30px;*/
-        margin: -15px 0 -15px -15px;
+        margin: -15px 7.5px -15px -7.5px;
     }
 
     .input-form {
