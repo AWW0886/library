@@ -16,15 +16,15 @@ const notesIcon = document.querySelector('.notes-icon');
 const menuIcon = document.querySelector('.menu-icon');
 
 const myLibrary = [
-    {
-    title: 'The Hobbitj skfjns sfjs jdfn sdfsj sdfsd sdfsd',
-    authorfirst: 'JRR',
-    authorlast: 'Tolkien',
-    pages: '304',
-    genre: 'Fantasy/Sci-Fi',
-    notes: 'Good Book',
-    read: true
-    }
+//    {
+//    title: 'The Hobbitj skfjns sfjs jdfn sdfsj sdfsd sdfsd',
+//    authorfirst: 'JRR',
+//    authorlast: 'Tolkien',
+//    pages: '304',
+//    genre: 'Fantasy/Sci-Fi',
+//    notes: 'Good Book',
+//    read: true
+//    }
 ];
 
 updateLibrary();
@@ -68,10 +68,10 @@ function updateLibrary() {
             bookCard.style.borderBottomColor = '#352f44'}
             </p>
             <div class='card-icon-container'>
-                <img class='notes-icon' onclick='showHide(${i})' src='img/text-box-outline.svg' alt='notes-icon'>
-                <img class='read-icon' onclick='changeRead(${i})' src='img/book-open-page-variant-outline.svg' alt='read-icon'>
-                <img class='edit-icon' onclick='editBook(${i})'src='img/file-document-edit-outline.svg' alt='edit-icon'>
-                <img class='remove-icon' onclick='removeBook(${i})' src='img/trash-can-outline.svg' alt='remove-icon'>
+                <img class='notes-icon' onclick='showHide(${i})' src='img/text-box-outline.svg' alt='notes-icon' title='Notes'>
+                <img class='read-icon' onclick='changeRead(${i})' src='img/book-open-page-variant-outline.svg' alt='read-icon' title='Read/Not Read'>
+                <img class='edit-icon' onclick='editBook(${i})'src='img/file-document-edit-outline.svg' alt='edit-icon' title='Edit'>
+                <img class='remove-icon' onclick='removeBook(${i})' src='img/trash-can-outline.svg' alt='remove-icon' title='Remove'>
             </div>
         </div>
         `;
