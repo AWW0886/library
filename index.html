@@ -17,8 +17,6 @@
             </div>
             <form class="input-form">
                 <div class="align-form">
-<!--                    <div class="sub-align"> -->
-<!--                    <div class="align-one"> -->
                     <label for="title-input">Title</label>
                     <input type="text" id="title-input">
                 
@@ -30,12 +28,8 @@
                     <input type="text" 
                            id="authorlast-input" 
                            placeholder="Last Name">
-<!--                    </div> -->
-<!--                    <div class="align-two"> -->
                     <label for="pages-input">Pages</label>
                     <input type="number" id="pages-input">
-                    
-<!--                    <div class="genre-container"> -->
                     <label for="genre-select">Genre</label>
                     <select name="" id="genre-select">
                         <option value=""></option>
@@ -46,15 +40,12 @@
                         <option value="Young Adult">Young Adult</option>
                         <option value="Other">Other</option>
                     </select>
-<!--                    </div> -->
-                    
-<!--                    </div> -->
-<!--                    </div> -->
                     <label class="notes-label" for="notes-input">Notes</label>
                     <textarea name="" id="notes-input" disabled></textarea>
-                    <label class="read-label" for="read-input">Read?</label>
-                    <input type="checkbox" name="" id="read-input">
-                    
+                    <div class="read-container">
+                        <label class="read-label" for="read-input">Read?</label>
+                        <input type="checkbox" name="" id="read-input">
+                    </div>                  
                 </div>
                 <div class="button-container">
                     <button class="clear-button" disabled>Clear</button>
@@ -62,20 +53,7 @@
                 </div>
             </form>
         </div>
-<!--       <div class="right-container">
-            <div class="subheader-one">
-                <div class="search-container">
-                    <img src="img/magnify.svg" alt="search-img">
-                    <input class="search" type="text">
-                </div>
-                <div class="subheader-one-menu">
-                    <img class="bell-img" src="img/bell-outline.svg" alt="notification-img">
-                    <div class="one-menu-divider"></div>
-                    <img class="small-logo" src="img/alpha-a-circle.svg" alt="logo-img-small">
-                    <p class="user">Arnold Wong</p>
-                </div>
-            </div> -->
-        <!--        <table class="book-table">
+<!--    <table class="book-table">
             <thead>
                 <tr>
                     <th scope="col">Title</th>
@@ -93,7 +71,6 @@
         <div class="grid-container">
             <div class="library"></div>
         </div>
-<!--        </div> -->
     </div>
 </body>
 </html>
