@@ -202,6 +202,12 @@ textarea {
     width: 5rem;
 }
 
+.clear-button:hover,
+#add-button:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
 /*.book-table tr {
     border: 1px dashed steelblue;
     display: grid;
@@ -231,10 +237,6 @@ textarea {
     outline: 2px solid #352f44;
     height: 225px;
     padding: 25px 15px 25px;
-}
-
-.book-card img {
-    width: 1.5rem;
 }
 
 .card-background {
@@ -275,6 +277,12 @@ textarea {
 
 .card-icon-container img {
     margin-left: 5px;
+    width: 1.5rem;
+}
+
+.card-icon-container img:hover {
+    cursor: pointer;
+    opacity: 0.5;
 }
 
 @media only screen and (max-width: 1100px) {
