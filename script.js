@@ -151,29 +151,29 @@ function changeRead(index) {
 //        }
 //}
 
-//menuIcon.addEventListener('click', function() {
+//menuIcon.addEventListener('click', e => {
 //    showHideForm();
 //})
 
-//newBookButton.addEventListener('click', function() {
+//newBookButton.addEventListener('click', e => {
 //    let addBookForm = document.querySelector('.input-form');
 //    addBookForm.style.display = 'flex';
 //    changeRead();
 //})
 
-addButton.addEventListener('click', function() {
+addButton.addEventListener('click', e => {
     event.preventDefault();
     addBookToLibrary();
 })
 
-clearButton.addEventListener('click', function() {
+clearButton.addEventListener('click', e => {
     clearForm();
 })
 
-//notesIcon.addEventListener('click', function() {
+//notesIcon.addEventListener('click', e => {
 //    showHide();
 //})
 
-//readIcon.addEventListener('click', function() {
+//readIcon.addEventListener('click', e => {
 //    changeRead();
 //})
